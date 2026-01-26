@@ -1,4 +1,4 @@
-package BAI_TAP.session1;
+package SRC.session1;
 
 public class ex3 {
     String book1 = "one";

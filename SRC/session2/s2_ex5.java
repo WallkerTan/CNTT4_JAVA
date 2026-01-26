@@ -1,4 +1,4 @@
-package BAI_TAP.session2;
+package SRC.session2;
 import java.util.Scanner;
 
 
