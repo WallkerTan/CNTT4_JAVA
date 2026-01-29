@@ -20,7 +20,6 @@ public class HN_KS24_CNTT4_PhamNhatTan {
         return sc.nextLine().trim();
     }
 
-
     public void output(String[] arr,int size){
         if(size == 0){
             System.out.println("ko co sv nao!");
@@ -42,12 +41,10 @@ public class HN_KS24_CNTT4_PhamNhatTan {
         }
     }
 
-
     public boolean msvVaidate(String str){
         String regex = "^B[0-9]{7}$";
         return str.matches(regex);
     }
-
 
     public int addStudent(String[] arr,int size,Scanner sc){
         System.out.println("Nhap Ma Sinh Vien");
@@ -60,6 +57,7 @@ public class HN_KS24_CNTT4_PhamNhatTan {
         }
         return size;
     }
+    
     public int findIndex(String[] arr, int size, String msv){
         for (int i = 0; i < size; i++) {
             if (arr[i].equalsIgnoreCase(msv)) {
