@@ -1,4 +1,5 @@
 package SRC.session5;
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.regex.*;
 
@@ -68,7 +69,8 @@ public class HN_KS24_CNTT4_PhamNhatTan {
         return -1;
     }
 
-    public int deleteStudent(String[] arr, int size, String msv) {
+    public int deleteStudent(String[] arr, int size,Scanner sc) {
+        String msv = nhapChuoi(sc);
         int z = findIndex(arr, size, msv);
         if(z!=-1){
             for(int i = z; i<size-1; i++){
@@ -81,6 +83,15 @@ public class HN_KS24_CNTT4_PhamNhatTan {
         return size;
     }
 
+    public void search(String[] arr,Scanner sc,int size){
+        String msv = nhapChuoi(sc);
+        int t = findIndex(arr, size, msv);
+        if(t!=-1){
+            System.out.printf("vi tri: %s\n",t);
+        }else{
+            System.out.println("khong tim thay");
+        }
+    }
     public static void main(String[] args) {
         HN_KS24_CNTT4_PhamNhatTan e = new HN_KS24_CNTT4_PhamNhatTan();
         boolean check = true;
@@ -104,7 +115,10 @@ public class HN_KS24_CNTT4_PhamNhatTan {
                     e.output(arr, size);
                     break;
                 case 3:
-                    size = e.deleteStudent(arr, size, "B1234567");
+                    size = e.deleteStudent(arr, size, sc);
+                    break;
+                case 4:
+                    e.search(arr, sc, size);
                     break;
                 default:
                     break;
