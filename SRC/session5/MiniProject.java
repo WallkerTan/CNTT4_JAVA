@@ -1,4 +1,4 @@
-package Test;
+package SRC.session5;
 
 import java.util.Scanner;
 
