@@ -1,0 +1,31 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "HN_KS24_CNTT4_PhamNhatTan",
+            "request": "launch",
+            "mainClass": "SRC.session8.HN_KS24_CNTT4_PhamNhatTan",
+            "projectName": "java_af1d9781"
+        },
+        {
+            "name": "C/C++ Runner: Debug Session",
+            "type": "cppdbg",
+            "request": "launch",
+            "args": [],
+            "stopAtEntry": false,
+            "externalConsole": true,
+            "cwd": "c:/Users/admin/OneDrive/Desktop/java/SRC",
+            "program": "c:/Users/admin/OneDrive/Desktop/java/SRC/build/Debug/outDebug",
+            "MIMode": "gdb",
+            "miDebuggerPath": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}
