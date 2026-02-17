@@ -1,50 +1,34 @@
-// package SRC.session7;
+package SRC.session7;
 
-// public class s7_ex1 {
+class student {
+    private int id;
+    private String name;
+    static int total = 0;
 
-//     static class Student {
-//         // ===== Bien instance (MOI SV CO RIENG) =====
-//         private String id;
-//         private String name;
+    public student(int id, String name) {
+        this.id = id;
+        this.name = name;
+        total++;
+    }
 
-//         // ===== Bien static (DUNG CHUNG) =====
-//         private static int totalStudent = 0;
+    public void getInfo() {
+        System.out.println("id: " + this.id);
+        System.out.println("name: " + this.name);
+    }
 
-//         // ===== Constructor =====
-//         public Student(String id, String name) {
-//             this.id = id;
-//             this.name = name;
-//             totalStudent++; // moi lan tao SV -> tang tong
-//         }
+    public int getCount() {
+        return student.total;
+    }
+}
 
-//         // ===== Hien thi thong tin SV =====
-//         public void showInfo() {
-//             System.out.println("Ma SV: " + id);
-//             System.out.println("Ten SV: " + name);
-//         }
-
-//         // ===== Hien thi tong so SV =====
-//         public static void showTotalStudent() {
-//             System.out.println("Tong so sinh vien: " + totalStudent);
-//         }
-//     }
-
-//     public static void main(String[] args) {
-
-//         Student s1 = new Student("SV01", "Tan");
-//         Student s2 = new Student("SV02", "An");
-//         Student s3 = new Student("SV03", "Binh");
-
-//         s1.showInfo();
-//         System.out.println();
-
-//         s2.showInfo();
-//         System.out.println();
-
-//         s3.showInfo();
-//         System.out.println();
-
-//         // Bien static goi qua class
-//         Student.showTotalStudent();
-//     }
-// }
+public class s7_ex1 {
+    public static void main(String[] args) {
+        student s1 = new student(1, "tan1");
+        student s2 = new student(2, "tan2");
+        student s3 = new student(3, "tan3");
+        s1.getInfo();
+        s2.getInfo();
+        s3.getInfo();
+        System.out.println("so lg sv: "+s1.getCount());
+    }
+}

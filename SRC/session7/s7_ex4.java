@@ -1,49 +1,79 @@
-// package SRC.session7;
+package SRC.session7;
 
-// public class s7_ex4 {
+import java.util.ArrayList;
 
-//     static class ClassRoom {
+class User {
+    private int id;
+    private String userName;
+    private String passWord;
+    private static int count = 0;
 
-//         // ===== BIEN STATIC: QUY CHUNG CUA LOP =====
-//         private static double classFund = 0;
+    public User(String userName, String passWord){
+        // auto increment
+        this.id = this.count++;
 
-//         // ===== BIEN INSTANCE: MOI SINH VIEN CO RIENG =====
-//         private String studentName;
+        if(userName == null || userName.trim().isEmpty()){
+            System.out.println("ten cua may khong hop le");
+            return;
+        }
+        this.userName = userName;
 
-//         // ===== Constructor =====
-//         public ClassRoom(String studentName) {
-//             this.studentName = studentName;
-//         }
+        if(passWord == null || passWord.trim().isEmpty()){
+            System.out.println("pass may nhu dau buoi");
+            return;
+        }
 
-//         // ===== Dong tien vao quy =====
-//         public void donate(double amount) {
-//             if (amount > 0) {
-//                 classFund += amount;
-//                 System.out.println(studentName + " dong " + amount + " vao quy");
-//             } else {
-//                 System.out.println("So tien khong hop le");
-//             }
-//         }
+        this.passWord = passWord;
+    } 
+    public void show(){
+        System.out.println(this.userName);
+        StringBuilder sb = new StringBuilder("");
+        for(int i = 0; i< this.passWord.length(); i++){
+            sb.append("*");
+        }
+        System.out.println(sb.toString());
+    } 
+    public int number(){
+        return this.count;
+    }
+}
 
-//         // ===== Xem tong quy (STATIC METHOD) =====
-//         public static void showClassFund() {
-//             System.out.println("Tong quy lop: " + classFund);
-//         }
-//     }
+class userManenger {
+    private static ArrayList<User> user = new ArrayList<>();
 
-//     public static void main(String[] args) {
 
-//         ClassRoom s1 = new ClassRoom("Tan");
-//         ClassRoom s2 = new ClassRoom("An");
-//         ClassRoom s3 = new ClassRoom("Binh");
+    // thêm user
+    public void add(User temp){
+        user.add(temp);
+    }
+    // kiem tra đăng nhập
+    public boolean check(String name, String password){
+        for(User u : user){
+            if(u.equals(password) && u.equals(name)){
+                return true;
+            }
+        }
+        return false;
+    }
+    // hien thị mây thg trong lop
 
-//         s1.donate(100);
-//         s2.donate(200);
-//         s3.donate(150);
+    public void showclass(){
+        for(User u : user){
+            u.show();
+        }
+    }
+}
 
-//         System.out.println();
+public class s7_ex4 {
 
-//         // Goi qua ten lop
-//         ClassRoom.showClassFund();
-//     }
-// }
+    public static void main(String[] args) {
+        userManenger cl1 = new userManenger();
+        User temp = new User("temp", "?????????");
+        cl1.add(new User("tan", "12345678"));
+        cl1.add(new User("tan2", "12345678"));
+        cl1.add(new User("tan2", "12345678"));
+        cl1.add(new User("tan2", "12345678"));
+        cl1.showclass();
+        System.out.println(temp.number());
+    }
+}

@@ -3,6 +3,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "s7_ex6",
+            "request": "launch",
+            "mainClass": "SRC.session7.s7_ex6",
+            "projectName": "java_af1d9781"
+        },
+        {
+            "type": "java",
+            "name": "s6_ex6",
+            "request": "launch",
+            "mainClass": "SRC.session6.s6_ex6",
+            "projectName": "java_af1d9781"
+        },
+        {
+            "type": "java",
+            "name": "s7_ex1",
+            "request": "launch",
+            "mainClass": "SRC.session7.s7_ex1",
+            "projectName": "java_af1d9781"
+        },
+        {
+            "type": "java",
             "name": "HN_KS24_CNTT4_PhamNhatTan",
             "request": "launch",
             "mainClass": "SRC.session8.HN_KS24_CNTT4_PhamNhatTan",
