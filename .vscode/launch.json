@@ -3,6 +3,48 @@
     "configurations": [
         {
             "type": "java",
+            "name": "s9_ex6",
+            "request": "launch",
+            "mainClass": "SRC.session9.s9_ex6",
+            "projectName": "java_af1d9781"
+        },
+        {
+            "type": "java",
+            "name": "s9_ex5",
+            "request": "launch",
+            "mainClass": "SRC.session9.s9_ex5",
+            "projectName": "java_af1d9781"
+        },
+        {
+            "type": "java",
+            "name": "s9_ex4",
+            "request": "launch",
+            "mainClass": "SRC.session9.s9_ex4",
+            "projectName": "java_af1d9781"
+        },
+        {
+            "type": "java",
+            "name": "s9_ex3",
+            "request": "launch",
+            "mainClass": "SRC.session9.s9_ex3",
+            "projectName": "java_af1d9781"
+        },
+        {
+            "type": "java",
+            "name": "s9_ex2",
+            "request": "launch",
+            "mainClass": "SRC.session9.s9_ex2",
+            "projectName": "java_af1d9781"
+        },
+        {
+            "type": "java",
+            "name": "s9_ex1",
+            "request": "launch",
+            "mainClass": "SRC.session9.s9_ex1",
+            "projectName": "java_af1d9781"
+        },
+        {
+            "type": "java",
             "name": "s7_ex6",
             "request": "launch",
             "mainClass": "SRC.session7.s7_ex6",
