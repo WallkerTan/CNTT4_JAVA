@@ -3,6 +3,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "btth_s11",
+            "request": "launch",
+            "mainClass": "SRC.session11.btth_s11",
+            "projectName": "java_af1d9781"
+        },
+        {
+            "type": "java",
+            "name": "s10_ex1",
+            "request": "launch",
+            "mainClass": "SRC.session10.s10_ex1",
+            "projectName": "java_af1d9781"
+        },
+        {
+            "type": "java",
             "name": "s9_ex6",
             "request": "launch",
             "mainClass": "SRC.session9.s9_ex6",
