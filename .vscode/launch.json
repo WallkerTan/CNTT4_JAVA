@@ -3,6 +3,55 @@
     "configurations": [
         {
             "type": "java",
+            "name": "s13_ex4",
+            "request": "launch",
+            "mainClass": "SRC.session13.s13_ex4",
+            "projectName": "java_af1d9781"
+        },
+        {
+            "type": "java",
+            "name": "s13_ex3",
+            "request": "launch",
+            "mainClass": "SRC.session13.s13_ex3",
+            "projectName": "java_af1d9781"
+        },
+        {
+            "type": "java",
+            "name": "s13_ex2",
+            "request": "launch",
+            "mainClass": "SRC.session13.s13_ex2",
+            "projectName": "java_af1d9781"
+        },
+        {
+            "type": "java",
+            "name": "s13_ex1",
+            "request": "launch",
+            "mainClass": "SRC.session13.s13_ex1",
+            "projectName": "java_af1d9781"
+        },
+        {
+            "type": "java",
+            "name": "BTOT",
+            "request": "launch",
+            "mainClass": "SRC.ontap.BTOT",
+            "projectName": "java_af1d9781"
+        },
+        {
+            "type": "java",
+            "name": "s10_ex6",
+            "request": "launch",
+            "mainClass": "SRC.session10.s10_ex6",
+            "projectName": "java_af1d9781"
+        },
+        {
+            "type": "java",
+            "name": "s10_ex2",
+            "request": "launch",
+            "mainClass": "SRC.session10.s10_ex2",
+            "projectName": "java_af1d9781"
+        },
+        {
+            "type": "java",
             "name": "btth_s11",
             "request": "launch",
             "mainClass": "SRC.session11.btth_s11",
