@@ -1,10 +1,10 @@
 package SRC.session6;
 
-class Student {
+class Studentz {
     private String name;
     private String passWord;
 
-    public Student(String name,String pasWord){
+    public Studentz(String name,String pasWord){
         if(name == null || name.trim().isEmpty()){
             System.out.println("ten khong hop le!!");
             return;
@@ -32,7 +32,7 @@ class Student {
 
 public class s6_ex6 {
     public static void main(String[] args) {
-        Student st1  = new Student("", "1234567");
+        Studentz st1  = new Studentz("", "1234567");
         System.out.println(st1.getName());
         System.out.println(st1.getpasword());
         

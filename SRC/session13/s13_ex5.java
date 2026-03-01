@@ -1,222 +1,216 @@
 package SRC.session13;
 
-import java.util.*;
-class Patient {
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Scanner;
 
-    private String id;
-    private String fullName;
+class Patient {
+    private int id;
+    private String name;
     private int age;
     private String diagnosis;
+    static int countid = 0;
 
-    public Patient(String id, String fullName, int age, String diagnosis) {
-        this.id = id;
-        this.fullName = fullName;
+    public Patient(String name, int age) {
+        this.name = name;
         this.age = age;
-        this.diagnosis = diagnosis;
+        this.diagnosis = "chua duoc chuan doan";
+        this.id = ++countid;
     }
 
-    public String getId() {
-        return id;
+    public int getID() {
+        return this.id;
     }
 
-    public String getFullName() {
-        return fullName;
+    public String getName() {
+        return this.name;
     }
 
     public int getAge() {
-        return age;
+        return this.age;
     }
 
     public String getDiagnosis() {
-        return diagnosis;
+        return this.diagnosis;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void setname(String name) {
+        this.name = name;
     }
 
     public void setDiagnosis(String diagnosis) {
         this.diagnosis = diagnosis;
     }
 
-    public void show() {
-        System.out.printf("%-10s %-20s %-5d %-20s\n",
-                id, fullName, age, diagnosis);
+    public void displayInfo() {
+        System.out.println("name: " + this.name);
+        System.out.println("age: " + this.age);
+        System.out.println("diagnosis: " + this.diagnosis);
     }
 }
+
 public class s13_ex5 {
+    static List<Patient> A = new ArrayList<>();
+    static Scanner sc = new Scanner(System.in);
 
-    static List<Patient> list = new ArrayList<>();
-
-
-    static boolean isExist(String id) {
-
-        for (Patient p : list) {
-
-            if (p.getId().equals(id))
-                return true;
-
-        }
-
-        return false;
+    static void menu() {
+        System.out.println("\n1.Them");
+        System.out.println("2.Sua");
+        System.out.println("3.Xoa");
+        System.out.println("4.In");
+        System.out.println("5.Tim benh nhan");
+        System.out.println("6.Sap sep tang dan (A-Z)");
+        System.out.println("7:sap sep giam dan (A-Z)");
+        System.out.println("8.Thoat");
     }
 
-
-    static Patient findById(String id) {
-
-        for (Patient p : list) {
-
-            if (p.getId().equals(id))
-                return p;
-
-        }
-
-        return null;
-    }
-
-
-    static void addPatient(Scanner sc) {
-
-        System.out.print("Nhap ID: ");
-        String id = sc.nextLine();
-
-        if (isExist(id)) {
-
-            System.out.println("ID da ton tai");
-            return;
-        }
-
-        System.out.print("Nhap ten: ");
+    static void addPatient() {
+        System.out.println("Ten benh nhan");
         String name = sc.nextLine();
-
-        System.out.print("Nhap tuoi: ");
-        int age = Integer.parseInt(sc.nextLine());
-
-        System.out.print("Nhap chan doan: ");
-        String d = sc.nextLine();
-
-        list.add(new Patient(id, name, age, d));
-
-        System.out.println("Them thanh cong");
+        System.out.println("tuoi benh nhan");
+        int age = sc.nextInt();
+        sc.nextLine();
+        A.add(new Patient(name, age));
     }
 
-
-    static void update(Scanner sc) {
-
-        System.out.print("Nhap ID: ");
-        String id = sc.nextLine();
-
-        Patient p = findById(id);
-
-        if (p == null) {
-
-            System.out.println("Khong tim thay");
-            return;
-        }
-
-        System.out.print("Chan doan moi: ");
-        String d = sc.nextLine();
-
-        p.setDiagnosis(d);
-
-        System.out.println("Cap nhat thanh cong");
-    }
-
-
-    static void remove(Scanner sc) {
-
-        System.out.print("Nhap ID: ");
-        String id = sc.nextLine();
-
-        Patient p = findById(id);
-
-        if (p == null) {
-
-            System.out.println("Khong tim thay");
-            return;
-        }
-
-        list.remove(p);
-
-        System.out.println("Xoa thanh cong");
-    }
-
-
-    static void sortList() {
-
-        Collections.sort(list, new Comparator<Patient>() {
-
-            public int compare(Patient a, Patient b) {
-
-                if (a.getAge() != b.getAge())
-
-                    return b.getAge() - a.getAge();
-
-                return a.getFullName().compareTo(b.getFullName());
+    static void updatePatient() {
+        int id;
+        System.out.println("nhap id can sua_");
+        id = sc.nextInt();
+        sc.nextLine();
+        boolean check = false;
+        int index = -1;
+        for (int i = 0; i < A.size(); i++) {
+            Patient x = A.get(i);
+            if (x.getID() == id) {
+                check = true;
+                index = i;
+                break;
             }
-
-        });
-
-        showList();
-    }
-
-
-    static void showList() {
-
-        if (list.isEmpty()) {
-
-            System.out.println("Danh sach rong");
-            return;
         }
 
-        System.out.printf("%-10s %-20s %-5s %-20s\n",
-                "ID", "Ten", "Tuoi", "Chan doan");
-
-        for (Patient p : list)
-            p.show();
+        if(index==-1){
+            System.out.println("ko tim thay");
+            return;
+        }
+        System.out.println("ten moi_");
+        String name = sc.nextLine();
+        System.out.println("nhap tuoi moi_");
+        int age = sc.nextInt();
+        sc.nextLine();
+        A.get(index).setname(name);
+        A.get(index).setAge(age);
     }
 
+    static void dischangeHopital() {
+        int id;
+        System.out.println("nhap id nguoi da chua khoi benh_");
+        id = sc.nextInt();
+        sc.nextLine();
+
+        for (int i = 0; i < A.size() - 1; i++) {
+            Patient x = A.get(i);
+            if (x.getID() == id) {
+                System.out.printf("benh nhan: %s -> da xuat vien\n", x.getName());
+                A.remove(i);
+                break;
+            }
+        }
+        System.out.println(" khong tim thay benh nhan nay");
+    }
+
+    static int getIndex(int id) {
+        for (int i = 0; i < A.size() - 1; i++) {
+            Patient x = A.get(i);
+            if (x.getID() == id) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    static void bilarySearch() {
+        int id;
+        System.out.println("nhap id nguoi can tim_");
+        id = sc.nextInt();
+        sc.nextLine();
+        List<Patient> B = A;
+        Collections.sort(B, (p1, p2) -> Integer.compare(p1.getID(), p2.getID()));
+
+        int left = A.get(0).getID();
+        int right = A.get(A.size() - 1).getID();
+        while (left <= right) {
+            int mid = (left + right) / 2;
+            if (id == mid) {
+                A.get(getIndex(mid)).displayInfo();
+                return;
+            }
+            if (id > mid) {
+                left = mid;
+            }
+            if (id < mid) {
+                right = mid;
+            }
+        }
+        System.out.println("khong tim thay ng dung");
+    }
+
+    static void displayAll() {
+        for (Patient x : A) {
+            x.displayInfo();
+        }
+    }
+
+    static void theSort(boolean z) {
+        if (z) {
+            Collections.sort(A, (x, y) -> x.getName().compareTo(y.getName()));
+        } else {
+            Collections.sort(A, (x, y) -> y.getName().compareTo(x.getName()));
+        }
+    }
 
     public static void main(String[] args) {
-
-        Scanner sc = new Scanner(System.in);
-
         while (true) {
-
-            System.out.println("\nMENU");
-            System.out.println("1. Them benh nhan");
-            System.out.println("2. Cap nhat chan doan");
-            System.out.println("3. Xuat vien");
-            System.out.println("4. Sap xep");
-            System.out.println("5. Hien thi");
-            System.out.println("0. Thoat");
-
-            int ch = Integer.parseInt(sc.nextLine());
-
-            switch (ch) {
-
+            menu();
+            int choice;
+            choice = sc.nextInt();
+            sc.nextLine();
+            switch (choice) {
                 case 1:
-                    addPatient(sc);
+                    addPatient();
                     break;
-
                 case 2:
-                    update(sc);
+                    updatePatient();
                     break;
-
                 case 3:
-                    remove(sc);
+                    dischangeHopital();
                     break;
-
                 case 4:
-                    sortList();
+                    displayAll();
                     break;
-
                 case 5:
-                    showList();
+                    bilarySearch();
                     break;
-
-                case 0:
+                case 6:
+                    theSort(true);
+                    break;
+                case 7:
+                    theSort(false);
+                    break;
+                case 8:
+                    System.out.println("cam on ban");
                     return;
+                default:
+                    System.out.println("lua chon khong hop le");
+                    break;
             }
-
         }
-
     }
-
 }

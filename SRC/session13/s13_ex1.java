@@ -36,5 +36,6 @@ public class s13_ex1 {
             System.out.printf("%.2f, \n",temp);
         }
 
+        
     }
 }
