@@ -3,6 +3,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "s15_ex3",
+            "request": "launch",
+            "mainClass": "SRC.session15.s15_ex3",
+            "projectName": "java_af1d9781"
+        },
+        {
+            "type": "java",
+            "name": "s15_ex2",
+            "request": "launch",
+            "mainClass": "SRC.session15.s15_ex2",
+            "projectName": "java_af1d9781"
+        },
+        {
+            "type": "java",
+            "name": "s15_ex1",
+            "request": "launch",
+            "mainClass": "SRC.session15.s15_ex1",
+            "projectName": "java_af1d9781"
+        },
+        {
+            "type": "java",
             "name": "s14_ex6",
             "request": "launch",
             "mainClass": "SRC.session14.s14_ex6",
