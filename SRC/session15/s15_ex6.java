@@ -138,6 +138,7 @@ class TicketSystem {
         return ticketQueue.poll();
     }
 }
+
 class InputAction {
     String fieldName;
     String oldValue;
@@ -158,6 +159,7 @@ class InputAction {
                " (" + actionTime + ")";
     }
 }
+
 public class s15_ex6 {
     public static void main(String[] args) {
 

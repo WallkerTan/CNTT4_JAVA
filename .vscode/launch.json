@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "btth",
+            "request": "launch",
+            "mainClass": "SRC.session16.btth",
+            "projectName": "java_af1d9781"
+        },
+        {
+            "type": "java",
             "name": "s15_ex3",
             "request": "launch",
             "mainClass": "SRC.session15.s15_ex3",
